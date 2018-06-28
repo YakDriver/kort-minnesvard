@@ -1,0 +1,11 @@
+language: python
+sudo: required
+
+before_install:
+  - sudo apt list --installed
+
+install:
+  - pip list
+
+script:
+  - sudo echo 
