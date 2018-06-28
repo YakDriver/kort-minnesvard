@@ -7,6 +7,7 @@ before_install:
 install:
   - pip list
   - pip freeze
+  - env
 
 script:
   - sudo echo 
