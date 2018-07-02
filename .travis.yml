@@ -1,4 +1,5 @@
 language: python
+python: 3.6
 sudo: required
 
 before_install:
@@ -10,4 +11,4 @@ install:
   - env
 
 script:
-  - sudo echo 
+  - python sysconfig.py
