@@ -12,16 +12,13 @@ install:
 
 script:
   - python sysconfig.py
-  - find / -name libcrypto* -print
-  - ls -hal /usr/lib
-  - ls -hal /usr/include
-  - exit 1
-  - ls -hal /usr/lib64
+  - export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+  - ls -hal $LD_LIBRARY_PATH
   - sudo mkdir upload
-  - cp /usr/lib64/ssl.so upload
-  - cp /usr/lib64/_ssl.so upload
-  - cp /usr/lib64/libcrypto.so.1.0.0 upload
-  - cp /usr/lib64/libssl.so.1.0.0 upload
+  - cp $LD_LIBRARY_PATH/ssl.so upload
+  - cp $LD_LIBRARY_PATH/_ssl.so upload
+  - cp $LD_LIBRARY_PATH/libcrypto.so.1.0.0 upload
+  - cp $LD_LIBRARY_PATH/libssl.so.1.0.0 upload
 
 deploy:
   - provider: s3
