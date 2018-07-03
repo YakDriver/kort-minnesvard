@@ -12,6 +12,7 @@ install:
 
 script:
   - python sysconfig.py
+  - find / -name libcrypto* -print
   - ls -hal /usr/lib
   - ls -hal /usr/include
   - exit 1
