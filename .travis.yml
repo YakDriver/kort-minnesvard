@@ -12,3 +12,18 @@ install:
 
 script:
   - python sysconfig.py
+  - ls -hal /usr/lib64
+  - sudo mkdir upload
+  - cp /usr/lib64/ssl.so upload
+  - cp /usr/lib64/_ssl.so upload
+  - cp /usr/lib64/libcrypto.so.1.0.0 upload
+  - cp /usr/lib64/libssl.so.1.0.0 upload
+
+deploy:
+  - provider: s3
+    bucket: watchmaker-dev
+    upload-dir: releases/Lib
+    local-dir: upload
+    skip_cleanup: true
+    on:
+      branch: master
