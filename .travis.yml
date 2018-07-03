@@ -12,6 +12,8 @@ install:
 
 script:
   - python sysconfig.py
+  - echo $LD_LIBRARY_PATH
+  - exit 1
   - ls -hal /usr/lib64
   - sudo mkdir upload
   - cp /usr/lib64/ssl.so upload
