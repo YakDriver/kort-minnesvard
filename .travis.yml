@@ -16,8 +16,8 @@ script:
   - ls -hal /lib/x86_64-linux-gnu
   - find / -name *ssl.so* 2>&1 | grep -v "Permission denied"
   - sudo mkdir upload
-  - cp /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 upload
-  - cp /lib/x86_64-linux-gnu/libssl.so.1.0.0 upload
+  - sudo cp /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 upload
+  - sudo cp /lib/x86_64-linux-gnu/libssl.so.1.0.0 upload
 
 deploy:
   - provider: s3
