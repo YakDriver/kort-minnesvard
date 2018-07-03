@@ -12,7 +12,8 @@ install:
 
 script:
   - python sysconfig.py
-  - echo $LD_LIBRARY_PATH
+  - ls -hal /usr/lib
+  - ls -hal /usr/include
   - exit 1
   - ls -hal /usr/lib64
   - sudo mkdir upload
