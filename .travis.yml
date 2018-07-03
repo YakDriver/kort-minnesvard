@@ -14,9 +14,8 @@ script:
   - python sysconfig.py
   - export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu
   - ls -hal /usr/lib/x86_64-linux-gnu
-  - ls -hal /usr/lib/x86_64-linux-gnu/ssl
   - ls -hal /lib/x86_64-linux-gnu
-  - ls -hal /lib/x86_64-linux-gnu/ssl  
+  - find / -name *ssl.so* 2>&1 | grep -v "Permission denied"
   - sudo mkdir upload
   - cp $LD_LIBRARY_PATH/ssl.so upload
   - cp $LD_LIBRARY_PATH/_ssl.so upload
